@@ -10,6 +10,7 @@ export class WeatherComponent implements OnInit {
   weather: any;
   img_url: string;
   @Input() woeid: string;
+  @Input() more: boolean;
   constructor(
     private weatherService: WeatherService) { }
 

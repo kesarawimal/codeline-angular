@@ -11,12 +11,7 @@ export class WeatherService {
 
   search(keyword) {
     const ep = this.url + 'command=search&keyword=' + keyword;
-    return this.httpClient.get(ep).pipe(map(res => {
-        return res.json();
-      }),
-      catchError((err) => {
-        return 'e';
-      }));
+    return this.httpClient.get(ep);
   }
 
   location(woeid: string) {

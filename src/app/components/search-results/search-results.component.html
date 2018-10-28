@@ -5,3 +5,7 @@
     <app-weather [woeid]="d.woeid"></app-weather>
   </div>
 </div>
+
+<div *ngIf="nodata">
+  <h6 style="color: coral" class="text-center">No results were found. Try changing the keyword!</h6>
+</div>

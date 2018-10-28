@@ -10,6 +10,7 @@ import {WeatherService} from '../../services/weather.service';
 export class SearchResultsComponent implements OnInit {
   keyword: string;
   data: any;
+  nodata: boolean;
   constructor(private route: ActivatedRoute, private weatherService: WeatherService) { }
 
   ngOnInit() {
@@ -17,6 +18,9 @@ export class SearchResultsComponent implements OnInit {
     this.weatherService.search(this.keyword).subscribe( (value => {
       console.log(value);
       this.data = value;
+      if (value.length <= 0 || value === 'e') {
+        this.nodata = true;
+      }
     }));
   }
 
