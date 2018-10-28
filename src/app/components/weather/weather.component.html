@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="text-center" [(ngModel)]="weather.title">city</h1>
+    <div class="row">
+      <div class="col-md-2 offset-5 text-center">
+        <img style="padding: 20px;" [src]="img_url" alt="weather">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <h5>the temperature</h5>
+        <p [(ngModel)]="weather.the_temp">13.5925</p>
+      </div>
+      <div class="col-md">
+        <h5>the maximum temperature</h5>
+        <p [(ngModel)]="weather.max_temp">13.5925</p>
+      </div>
+      <div class="col-md">
+        <h5>the minimum temperature</h5>
+        <p [(ngModel)]="weather.min_temp">13.5925</p>
+      </div>
+    </div>
+  </div>
+</div>
