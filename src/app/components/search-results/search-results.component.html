@@ -1,0 +1,7 @@
+<app-search></app-search>
+
+<div *ngIf="data">
+  <div *ngFor="let d of data">
+    <app-weather [woeid]="d.woeid"></app-weather>
+  </div>
+</div>
