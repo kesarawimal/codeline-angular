@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <div class="container">
-    <h1 class="text-center" [(ngModel)]="weather.title">city</h1>
+    <h1 class="text-center">{{weather.title}}</h1>
     <div class="row">
       <div class="col-md-2 offset-5 text-center">
         <img style="padding: 20px;" [src]="img_url" alt="weather">
@@ -9,15 +9,15 @@
     <div class="row">
       <div class="col-md">
         <h5>the temperature</h5>
-        <p [(ngModel)]="weather.the_temp">13.5925</p>
+        <p>{{weather.consolidated_weather[0].the_temp}}</p>
       </div>
       <div class="col-md">
         <h5>the maximum temperature</h5>
-        <p [(ngModel)]="weather.max_temp">13.5925</p>
+        <p>{{weather.consolidated_weather[0].max_temp}}</p>
       </div>
       <div class="col-md">
         <h5>the minimum temperature</h5>
-        <p [(ngModel)]="weather.min_temp">13.5925</p>
+        <p>{{weather.consolidated_weather[0].min_temp}}</p>
       </div>
     </div>
   </div>

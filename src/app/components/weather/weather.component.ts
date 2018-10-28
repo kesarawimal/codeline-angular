@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {WeatherService} from '../../services/weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -6,13 +7,18 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
-  @Input() weather;
+  weather: any;
   img_url: string;
-  constructor() { }
+  @Input() woeid: string;
+  constructor(
+    private weatherService: WeatherService) { }
 
   ngOnInit() {
-    this.img_url = 'https://www.metaweather.com/static/img/weather/png/64/' + this.weather.weather_state_abbr + '.png';
-    console.log(this.weather);
+    this.weatherService.location(this.woeid).subscribe( (value => {
+      this.weather = value;
+      console.log(this.weather);
+      this.img_url = 'https://www.metaweather.com/static/img/weather/png/64/' + this.weather.consolidated_weather[0].weather_state_abbr + '.png';
+    }));
   }
 
 }
