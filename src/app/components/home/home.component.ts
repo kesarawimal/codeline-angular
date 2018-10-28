@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {WeatherService} from '../../services/weather.service';
 
 @Component({
@@ -7,16 +7,10 @@ import {WeatherService} from '../../services/weather.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  weather: any;
   constructor(
-    private weatherService: WeatherService
   ) { }
 
   ngOnInit() {
-    this.weatherService.location('2487956').subscribe(value => {
-      console.log(value);
-      this.weather = value;
-    });
   }
 
 }
